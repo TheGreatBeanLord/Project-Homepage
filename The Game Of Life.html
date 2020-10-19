@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Game of Life</title>
+    <link rel="stylesheet" href="CSS/GameOfLife.css">
+</head>
+<body>
+    <h1>The Game of Life</h1> 
+        <h2>How it works</h2>
+        <p>The Grid represents an environment and each box is a unit.  If you click a box, it will turn green.  Green boxes represent living cells, white ones represent vacant areas.  Each frame time passes and cells will live, die, or reproduce based on a set of criterian. Fill some cells and press start to watch the simulation, or press next frame to go forward a single unit of time</p>
+        <ul>
+            <li>If a cell has 2 or 3 neighbors it will survive the turn</li>
+            <li>If a cell has more than 3 neighbors, it will die due to overpopulation</li>
+            <li>If a cell has fewer than 2 neighbors, it will die due to isolation</li>
+            <li>If an empty square has 3 neighbors, it will become occupied due to reproduction</li>
+        </ul>
+    <button id="StartBtn">Start!</button>
+    <button id="StopBtn">Stop</button>
+    <button id="NextFrameBtn">Next Frame</button>
+    <button id="DimensionsEditor">Change Size</button>
+    <input id="NewDimensions">
+    <div id="container" class="center">
+    </div>
+
+    <!-- Load JavaScript -->
+    <script src="JS/Game-Of-Life-Grid.js"></script>
+    <script src="JS/GameOfLifeMain.js"></script>
+    <script src="JS/Game-Of-Life-checkSurroundings.js"></script>
+    <script src="JS/Game-Of-Life-selectedToggler.js"></script>
+    <script src="JS/Game-Of-Life-DimensionsEditor.js"></script>
+
+
+</body>
+</html>

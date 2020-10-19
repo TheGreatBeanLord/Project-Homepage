@@ -1,0 +1,125 @@
+body {
+    background-color:grey;
+    font-family: Helvetica, Arial; /* Base Font */
+    margin: 0;
+}
+
+.main {
+    background-color: white;
+    height: 1000px;
+    width: 890px;
+  /*  margin-top: 100px; */
+    padding: 20px;
+   /* margin-top: 50px;*/
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 52px;
+}
+
+h2{
+    margin-left: 20;
+}
+
+h2 {
+    font-family: 'Ledger', serif;
+}
+
+p, ul {
+    letter-spacing: 0.5px;
+}
+
+audio {
+    vertical-align: middle;
+}
+
+button {
+    font-variant: small-caps;
+    color: white;
+    padding: 5px 20px;
+    font-size: 18px;
+    letter-spacing: 0.6px;
+}
+
+.activeBtn {
+    border: 2px solid #990100;
+}
+
+#springBtn {
+    background-color: #0E94D1;
+}
+
+#summerBtn {
+    background-color: #1BA848;
+}
+
+#autumnBtn {
+    background-color: #FE6732;
+}
+
+#winterBtn {
+    background-color: #1C64B9;
+}
+
+.center {
+    text-align: center;
+}
+
+a {
+    color: #990100;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.img-note {
+    font-size: 12px;
+    font-style: italic;
+}
+
+#season-text {
+    text-transform: capitalize;
+}
+
+.Description {
+    margin: 10px;
+    float: left;
+    width: 200px;
+    height: 250px;
+    border:solid 1px;
+    border-radius: 6px;
+}
+
+img {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    height:110px;
+    width: 200px;
+    
+}
+
+.descText {
+    margin: 5px;
+    text-indent: 4px;
+}
+.title {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+a {
+    color: black;
+    font-weight: 200;
+    text-decoration: none;
+}
+
+.light {
+    font-weight: 50;
+    color: grey;
+}

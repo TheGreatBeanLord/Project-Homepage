@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="CSS/Go-Fish.css">
+      <link rel="icon" type="image/png" sizes="16x16" href="Media/favicon-16x16.png">
+        <title>Go Fish!</title>
+
+    </head>
+    <body onload="StartScreen()">
+        <div class="MainDiv">
+ 
+        <p><button id="NextTurnBtn">Next Turn</button></p>
+        
+       
+        <div id="images" class="images">
+        <img src="Media/back of card.jpg" id="BackOfCard">
+        <img src="Media/LS.jpg" id="LoadingScreen">
+      
+        </div>
+        <canvas id="mycanvas"></canvas>
+        </div>
+
+        <script src="JS/Libraries/math-ext.js"></script>
+        <script src="JS/Libraries/Go-Fish-graphics-library.js"></script>
+        <script src="JS/Go-Fish-botController.js"></script>
+        <script src="JS/Go-Fish-grid.js"></script>
+        <script src="JS/Go-Fish-Canvas.js"></script>
+        <script src="JS/Go-Fish-Main.js"></script>
+    </body>
+</html>

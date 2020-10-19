@@ -1,0 +1,16 @@
+/*
+    function counter() {
+        imgLoadCounter++;
+        if (imgLoadCounter > playerHands[turn].length - 1) {
+             drawCardsController();
+            
+        }
+    }
+*/
+
+/*
+    function loaded(){
+        isloaded = true;
+    }
+    //Draw white background
+*/
