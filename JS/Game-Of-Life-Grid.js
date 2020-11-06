@@ -16,13 +16,6 @@ function createGridArray(){
         GridArray2d.push(anArray.slice(0, anArray.length));
     }
 
-   // console.log(GridArray2d);
-
-
-
-
-
-
 return(GridArray2d);
 }
 

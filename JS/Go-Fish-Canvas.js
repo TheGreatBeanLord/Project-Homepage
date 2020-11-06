@@ -184,7 +184,7 @@ function clickHandler(event){
                 fish(cardXYarray[i].num);
                 console.log("pressinglast");
                 return;
-               "la creatura";
+            
             }
                    
         }
@@ -225,8 +225,6 @@ function fish(CardNum, BotTargetPlayer){
         checkBooks(turn);
 
         displayCards(); 
-    console.log("this is garbage");
-    console.log("donefishing");
         turnDone = true;
         return;
        }
@@ -341,7 +339,7 @@ function InstructionsScreen(){
     ctx.drawImage(document.getElementById("LoadingScreen"), 0, 0, cnv.width, cnv.height);
     ctx.fillStyle = 'rgba(10, 10, 10, 0.7)';
     ctx.fillRect(75, 75, cnv.width - 150, cnv.height - 150);
-    drawText("If you are playing with more than one player:", 100, 100, "verdana", 20, "white");
+    drawText("If you are playing with more than one other player:", 100, 100, "verdana", 20, "white");
     drawText("First, click on the deck of the player that you want to draw from.", 100, 125, "verdana", 15, "white");
     drawText("Second, click on the card from your hand that you would like to request.", 100, 150, "verdana", 15, "white");
     drawText("If the selected player does not have this card, one will be pulled from the deck", 100, 175, "verdana", 15, "white");

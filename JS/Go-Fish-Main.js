@@ -12,7 +12,7 @@ let isBots = false;
     appendImages();
 
    //Generate Cards
-Deck = GenerateGrid();
+ Deck = GenerateGrid();
 
 //Event listeners
 document.getElementById("mycanvas").addEventListener("click", clickHandler);
@@ -86,166 +86,62 @@ function Deal() {
     
     return(HandArray);
 }
-
+ 
 
 //function for detecting when paires of cards are found
 function checkBooks(playerHandId) {
-    let AceNum = 0;
-    let TwoNum = 0;
-    let ThreeNum = 0;
-    let FourNum = 0;
-    let FiveNum = 0;
-    let SixNum = 0;
-    let SevenNum = 0;
-    let EightNum = 0;
-    let NineNum = 0;
-    let TenNum = 0;
-    let JackNum = 0;
-    let QueenNum = 0;
-    let KingNum = 0;
+    console.log("checking books");
 
- for (let i = 0; i < playerHands[playerHandId].length; i++){
-     switch (playerHands[playerHandId][i].num){
-         case 1: AceNum++;
-         if (AceNum == BookNum){
-             //console.log("book1");
-             BookFound(1, playerHandId);
-             AceNum = 0;
-             playerScores[playerHandId]++;
-
-         }
-         break;
-         case 2: TwoNum++;
-         if (TwoNum == BookNum){
-            //console.log("book2");
-            BookFound(2, playerHandId);
-            TwoNum = 0;
-            playerScores[playerHandId]++;
-
+    let cardNumArray = [];
+    while (cardNumArray.length < 13){
+        cardNumArray.push(0);
+    }  
+ 
+//call the checkCard function for each card and each possible rank for the givin card
+    for (let i = 0; i < playerHands[playerHandId].length; i++){
+        for (let n = 0; n < 13; n++){
+            checkCard(playerHandId, i, n);
         }
-         break;
-         case 3: ThreeNum++;
-         if (ThreeNum == BookNum){
-            //console.log("book3");
-            BookFound(3, playerHandId);
-            ThreeNum = 0;
-            playerScores[playerHandId]++;
-
+    }
+//call the BookFound function for each card that has been found twice or more times in a hand
+    for (let i = 0; i <cardNumArray.length - 1; i++){
+        if (cardNumArray[i] >= 2){
+            BookFound(i + 1, playerHandId);
         }
-         break;
-         case 4: FourNum++;
-         if (FourNum == BookNum){
-            //console.log("book4");
-            BookFound(4, playerHandId);
-            FourNum = 0;
-            playerScores[playerHandId]++;
+    }   
 
+//checks if a given card has a given value.
+    function checkCard(playerHandId, i, n){
+        console.log("checking" + playerHandId + i + n);
+        
+       
+        if (playerHands[playerHandId][i].num == n){
+            cardNumArray[n - 1] ++;
         }
-         break;
-         case 5: FiveNum++;
-         if (FiveNum == BookNum){
-            //console.log("book5");
-            BookFound(5, playerHandId);
-            FiveNum = 0;
-            playerScores[playerHandId]++;
-
-        }
-         break;
-         case 6: SixNum++;
-         if (SixNum == BookNum){
-            //console.log("book6");
-            BookFound(6, playerHandId);
-            SixNum = 0;
-            playerScores[playerHandId]++;
-
-        }
-         break;
-         case 7: SevenNum++;
-         if (SevenNum == BookNum){
-            //console.log("book7");
-            BookFound(7, playerHandId);
-            SevenNum = 0;
-            playerScores[playerHandId]++;
-
-        }
-         break;
-         case 8: EightNum++;
-         if (EightNum == BookNum){
-            //console.log("book8");
-            BookFound(8, playerHandId);
-            EightNum = 0;
-            playerScores[playerHandId]++;
-
-        }
-         break;
-         case 9: NineNum++;
-         if (NineNum == BookNum){
-            //console.log("book9");
-            BookFound(9, playerHandId);
-            NineNum = 0;
-            playerScores[playerHandId]++;
-
-        }
-         break;
-         case 10: TenNum++;
-         if (TenNum == BookNum){
-            //console.log("book10");
-            BookFound(10, playerHandId);
-            TenNum = 0;
-            playerScores[playerHandId]++;
-
-        }
-         break;
-         case 11: JackNum++;
-         if (JackNum == BookNum){
-            //console.log("book11");
-            BookFound(11, playerHandId);
-            JackNum = 0;
-            playerScores[playerHandId]++;
-
-        }
-         break;
-         case 12: QueenNum++;
-         if (QueenNum == BookNum){
-            //console.log("book 12");
-            BookFound(12, playerHandId);
-            QueenNum = 0;
-            playerScores[playerHandId]++;
-
-        }
-         break;
-         case 13: KingNum++;
-         if (KingNum == BookNum){
-            //console.log("book 13");
-            BookFound(13, playerHandId);
-            KingNum = 0;
-            playerScores[playerHandId]++;
-
-        }
-         break;
-     }
- }
+    }
 }
 
 
 //Function to remove cards that are found and place them on the table, also gives points
 function BookFound(BookName, playerHandId){
+    console.log("book" + BookName);
     let bookCounter = 0;
 
     for (let i = 0; i < playerHands[playerHandId].length; i++){
-        ////console.log(playerHands[playerHandId][i].num == BookName);
-        if (playerHands[playerHandId][i].num == BookName && bookCounter < 3){
-            //console.log(playerHands[playerHandId][i]);
+      
+        if (playerHands[playerHandId][i].num == BookName && bookCounter < 2){
+            bookCounter++;
+            console.log(bookCounter);
+
             Books.push(playerHands[playerHandId][i]);
             playerHands[playerHandId].splice(i, 1);
-            BookFound(BookName, playerHandId);
-          
+            i--;
+            playerScores[playerHandId] += 0.5;
 
     } 
 }
 checkBooks(playerHandId);
 
-//BookFound(BookName, playerHandId);
 }
 
 //function for changing whos turn it is and checking if the game is over

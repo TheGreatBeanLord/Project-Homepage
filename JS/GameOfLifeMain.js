@@ -73,7 +73,7 @@ function Frame() {
                   grid[row][col] = 1;
                   
                   select(row, col);
-                  
+                
               }
               else {
                   grid[row][col] = 0;

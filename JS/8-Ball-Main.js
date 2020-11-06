@@ -3,8 +3,8 @@
 
 
 // Set up Canvas and Graphics Context
-let cnv = document.getElementById("myCanvas");
-let ctx = cnv.getContext("2d");
+const cnv = document.getElementById("myCanvas");
+const ctx = cnv.getContext("2d");
 let answersArray = new Array;
 let mouseX = 250;
 let mouseY = 250;

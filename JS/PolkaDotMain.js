@@ -20,6 +20,8 @@ cnv.addEventListener("click", Start);
 }
 
 cnv.addEventListener("mousemove", mouseTracker);
+
+
 function Start(){
     if (isPlaying == false){
     playerArray = [{x: 300, y: 300, colour: "black", radius: 8}]
@@ -52,18 +54,10 @@ function EnemyGenController(){
     }
 }
 
-
-//function line(x1, y1, x2, y2){
-//ctx.beginPath();
-//ctx.moveTo(x1, y1);
-//ctx.lineTo(x2, y2);
-//ctx.stroke();
-//}
-
 function enemyGen(MaxSize, MinSize){
     let enemyX = locationGen("X");
     let enemyY = locationGen("Y");
-    enemyArray.push({x:enemyX, y:enemyY, colour: colourGen(), radius: Math.randomInt(MinSize, MaxSize), speed: Math.randomInt(1, 3), trajectorya:Math.randomDec(-1, 1), trajectoryb: Math.randomDec(-1, 1)});
+    enemyArray.push({x: locationGen("X"), y:locationGen("Y"), colour: colourGen(), radius: Math.randomInt(MinSize, MaxSize), speed: Math.randomInt(1, 3), trajectorya:Math.randomDec(-1, 1), trajectoryb: Math.randomDec(-1, 1)});
 }
 
 
